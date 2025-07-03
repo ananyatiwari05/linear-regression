@@ -32,3 +32,9 @@ To place it in context:
 * **Reinforcement Learning**: Learns through feedback from actions (e.g., games, robotics)
 
 This project focuses on the first: supervised learning — one of the most fundamental techniques in machine learning.
+
+## Scatter Plot with Best-Fit Line
+
+<img src="https://github.com/user-attachments/assets/d8ddd293-f640-40fa-8109-ed72adf5aa42" alt="Regression Plot" width="500">
+
+
