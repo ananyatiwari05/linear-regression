@@ -33,6 +33,70 @@ To place it in context:
 
 This project focuses on the first: supervised learning — one of the most fundamental techniques in machine learning.
 
+Absolutely — you can include a section in your README like this to explain the math behind your implementation. It breaks down **Mean Squared Error** and the **derivatives used in gradient descent**, with reference to the visuals you've attached.
+
+---
+
+## Math Behind the Model
+
+To fit a line $y = mx + b$ to the data, we use a technique called **Gradient Descent** to minimize the **Mean Squared Error (MSE)**.
+
+### Mean Squared Error (MSE)
+
+The error function (cost/loss) we want to minimize is:
+
+$$
+E = \frac{1}{n} \sum_{i=0}^{n} (y_i - (m \cdot x_i + b))^2
+$$
+
+Where:
+
+* $n$ = number of data points
+* $y_i$ = actual value
+* $x_i$ = input (tutorial hours)
+* $m$, $b$ = slope and intercept of the line
+
+This measures how far our predicted values are from the actual ones — squaring them ensures no negative cancellation.
+
+---
+
+### Gradient Descent: Minimizing Error
+
+To update the slope (`m`) and intercept (`b`), we compute the gradients of the error function w\.r.t. each parameter.
+
+**Partial Derivative w\.r.t. `m`:**
+
+$$
+\frac{\partial E}{\partial m} = -\frac{2}{n} \sum_{i=0}^{n} x_i (y_i - (m \cdot x_i + b))
+$$
+
+**Partial Derivative w\.r.t. `b`:**
+
+$$
+\frac{\partial E}{\partial b} = -\frac{2}{n} \sum_{i=0}^{n} (y_i - (m \cdot x_i + b))
+$$
+
+These derivatives tell us the **direction of steepest increase**, so we subtract them to move downhill — reducing error.
+
+---
+
+### Updating Parameters
+
+We use a learning rate $\mathcal{L}$ (a small number) to scale the step size during updates:
+
+$$
+m = m_{new} - \mathcal{rate} \cdot  {m_{gradient}}
+$$
+
+$$
+b = b_{new} - \mathcal{rate} \cdot  {b_{gradient}}
+$$
+
+This iterative update process is repeated (in our case, **1000 times**) to gradually reach the optimal line.
+
+___
+
+
 ## Scatter Plot with Best-Fit Line
 
 <img src="https://github.com/user-attachments/assets/d8ddd293-f640-40fa-8109-ed72adf5aa42" alt="Regression Plot" width="500">
